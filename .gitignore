@@ -1,0 +1,13 @@
+# Python environment
+.venv/
+venv/
+
+# Python cache artifacts
+__pycache__/
+*.pyc
+
+# Local OS noise
+.DS_Store
+
+# Exclude Qiita article draft from GitHub publish
+qiita_numpy_speed_benchmark.md

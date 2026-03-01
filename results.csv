@@ -1,0 +1,35 @@
+Category,Operation,Size_N,Python_Time_Sec,NumPy_Time_Sec,Speedup_Factor,Note
+Basic & Math,scalar_add,100,0.0000043399,0.0000006720,6.4578,A1:element-wise
+Basic & Math,scalar_add,10000,0.0002522037,0.0000021788,115.7562,A1:element-wise
+Basic & Math,scalar_add,1000000,0.0297070417,0.0001415417,209.8820,A1:element-wise
+Basic & Math,sin,100,0.0000041123,0.0000005188,7.9267,A2:heavy_math
+Basic & Math,sin,10000,0.0004299425,0.0000557246,7.7155,A2:heavy_math
+Basic & Math,sin,1000000,0.0487637640,0.0062776530,7.7678,A2:heavy_math
+Basic & Math,conditional_replace,100,0.0000038230,0.0000011451,3.3387,A3:mask_like
+Basic & Math,conditional_replace,10000,0.0003656788,0.0000096292,37.9761,A3:mask_like
+Basic & Math,conditional_replace,1000000,0.0365067223,0.0007832777,46.6076,A3:mask_like
+Aggregation,sum_all,100,0.0000339562,0.0000031604,10.7443,B1:2d_total_sum
+Aggregation,sum_all,500,0.0007284250,0.0000464250,15.6904,B1:2d_total_sum
+Aggregation,sum_all,1000,0.0028163335,0.0001838960,15.3148,B1:2d_total_sum
+Aggregation,sum_axis_1,100,0.0000332417,0.0000036458,9.1178,B2:row_sum
+Aggregation,sum_axis_1,500,0.0007210418,0.0000503668,14.3158,B2:row_sum
+Aggregation,sum_axis_1,1000,0.0028255420,0.0001875835,15.0628,B2:row_sum
+Aggregation,sum_axis_0,100,0.0002881792,0.0000034542,83.4298,B3:column_sum_stride
+Aggregation,sum_axis_0,500,0.0075487750,0.0000432916,174.3704,B3:column_sum_stride
+Aggregation,sum_axis_0,1000,0.0437015835,0.0001653540,264.2910,B3:column_sum_stride
+Broadcasting,matrix_plus_vector,100,0.0003957875,0.0000055542,71.2598,C1:broadcasting
+Broadcasting,matrix_plus_vector,500,0.0094577832,0.0000810250,116.7267,C1:broadcasting
+Broadcasting,matrix_plus_vector,1000,0.0391979165,0.0003483540,112.5232,C1:broadcasting
+Filtering,threshold_filter,100,0.0000022452,0.0000008827,2.5436,D1:boolean_index
+Filtering,threshold_filter,10000,0.0002111192,0.0000287450,7.3446,D1:boolean_index
+Filtering,threshold_filter,1000000,0.0210484583,0.0041138750,5.1165,D1:boolean_index
+Memory,slice,100,0.0000001322,0.0000001107,1.1938,E1:python_copy_numpy_view
+Memory,slice,10000,0.0000079371,0.0000001125,70.5519,E1:python_copy_numpy_view
+Memory,slice,1000000,0.0008364027,0.0000001250,6691.1704,E1:python_copy_numpy_view
+Memory,in_place_add,100,0.0000037686,0.0000005381,7.0033,E2:destructive_update
+Memory,in_place_add,10000,0.0004405371,0.0000015733,280.0030,E2:destructive_update
+Memory,in_place_add,1000000,0.0441223890,0.0001482780,297.5653,E2:destructive_update
+Memory,copy_add,100,0.0000024690,0.0000004152,5.9471,E3:new_allocation
+Memory,copy_add,10000,0.0002531479,0.0000027425,92.3055,E3:new_allocation
+Memory,copy_add,1000000,0.0299945557,0.0001806943,165.9961,E3:new_allocation
+Matrix Multiplication,matmul,100,0.0463924160,0.0000115840,4004.8723,F1:small_only

@@ -1,0 +1,98 @@
+Category,Operation,Business_Use,Size_N,Python_Time_Sec,NumPy_Time_Sec,Speedup_Factor,Note
+Element-wise,scalar_add,Feature shift,100,0.0000025246,0.0000004338,5.8204,A1:x + 1.5
+Element-wise,scalar_add,Feature shift,10000,0.0002479942,0.0000022000,112.7246,A1:x + 1.5
+Element-wise,scalar_add,Feature shift,1000000,0.0292912090,0.0001617090,181.1353,A1:x + 1.5
+Element-wise,scalar_mul,Scaling,100,0.0000025283,0.0000004561,5.5436,A2:x * 1.5
+Element-wise,scalar_mul,Scaling,10000,0.0002523667,0.0000022400,112.6637,A2:x * 1.5
+Element-wise,scalar_mul,Scaling,1000000,0.0297744580,0.0001953340,152.4284,A2:x * 1.5
+Element-wise,affine_transform,Linear calibration,100,0.0000034561,0.0000008773,3.9393,A3:x * 1.1 + 0.3
+Element-wise,affine_transform,Linear calibration,10000,0.0003486300,0.0000053000,65.7792,A3:x * 1.1 + 0.3
+Element-wise,affine_transform,Linear calibration,1000000,0.0387180830,0.0003376250,114.6778,A3:x * 1.1 + 0.3
+Element-wise,clip,Outlier capping,100,0.0000038728,0.0000015647,2.4752,"A4:clip [-1,1]"
+Element-wise,clip,Outlier capping,10000,0.0003823800,0.0000087750,43.5761,"A4:clip [-1,1]"
+Element-wise,clip,Outlier capping,1000000,0.0386698750,0.0006350420,60.8934,"A4:clip [-1,1]"
+Math Functions,sin,Signal transform,100,0.0000039163,0.0000004981,7.8628,B1:sin(x)
+Math Functions,sin,Signal transform,10000,0.0004096608,0.0000380467,10.7673,B1:sin(x)
+Math Functions,sin,Signal transform,1000000,0.0444498750,0.0040930830,10.8598,B1:sin(x)
+Math Functions,exp,Score exponential,100,0.0000040904,0.0000005200,7.8662,B2:exp(x)
+Math Functions,exp,Score exponential,10000,0.0004289358,0.0000515525,8.3204,B2:exp(x)
+Math Functions,exp,Score exponential,1000000,0.0471425420,0.0058415420,8.0702,B2:exp(x)
+Math Functions,log1p_abs,Log scaling,100,0.0000059647,0.0000009217,6.4717,B3:log1p(abs(x))
+Math Functions,log1p_abs,Log scaling,10000,0.0006407700,0.0000679233,9.4337,B3:log1p(abs(x))
+Math Functions,log1p_abs,Log scaling,1000000,0.0682951250,0.0076685830,8.9058,B3:log1p(abs(x))
+Math Functions,sqrt_abs,Magnitude transform,100,0.0000065310,0.0000009407,6.9430,B4:sqrt(abs(x))
+Math Functions,sqrt_abs,Magnitude transform,10000,0.0006828983,0.0000095342,71.6263,B4:sqrt(abs(x))
+Math Functions,sqrt_abs,Magnitude transform,1000000,0.0734162500,0.0007392920,99.3062,B4:sqrt(abs(x))
+Conditional,binary_threshold,Rule-based flags,100,0.0000039088,0.0000012064,3.2400,C1:x > 0
+Conditional,binary_threshold,Rule-based flags,10000,0.0003922792,0.0000098492,39.8286,C1:x > 0
+Conditional,binary_threshold,Rule-based flags,1000000,0.0387370830,0.0007850420,49.3440,C1:x > 0
+Conditional,ternary_bucket,Risk bucketing,100,0.0000045272,0.0000023901,1.8941,"C2:[-1, 0, 1]"
+Conditional,ternary_bucket,Risk bucketing,10000,0.0004390117,0.0000191325,22.9459,"C2:[-1, 0, 1]"
+Conditional,ternary_bucket,Risk bucketing,1000000,0.0442489160,0.0016924580,26.1448,"C2:[-1, 0, 1]"
+Conditional,filter_gt_0_5,Eligibility filter,100,0.0000020785,0.0000008672,2.3969,C3:x > 0.5
+Conditional,filter_gt_0_5,Eligibility filter,10000,0.0001956550,0.0000272708,7.1745,C3:x > 0.5
+Conditional,filter_gt_0_5,Eligibility filter,1000000,0.0203032500,0.0038077080,5.3321,C3:x > 0.5
+Conditional,relu_fill,Negative suppression,100,0.0000030486,0.0000011387,2.6771,"C4:max(x, 0)"
+Conditional,relu_fill,Negative suppression,10000,0.0002978283,0.0000099825,29.8350,"C4:max(x, 0)"
+Conditional,relu_fill,Negative suppression,1000000,0.0292068750,0.0007916250,36.8948,"C4:max(x, 0)"
+Aggregation,sum_axis_1,Row totals,100,0.0000345188,0.0000037459,9.2152,D1:2D row sum
+Aggregation,sum_axis_1,Row totals,500,0.0007307917,0.0000505140,14.4671,D1:2D row sum
+Aggregation,sum_axis_1,Row totals,1000,0.0028076250,0.0001873750,14.9840,D1:2D row sum
+Aggregation,sum_axis_0,Column totals,100,0.0002894937,0.0000036084,80.2288,D2:2D column sum
+Aggregation,sum_axis_0,Column totals,500,0.0075535973,0.0000434860,173.7018,D2:2D column sum
+Aggregation,sum_axis_0,Column totals,1000,0.0409354170,0.0001645000,248.8475,D2:2D column sum
+Aggregation,mean_axis_1,Row averages,100,0.0000358208,0.0000049000,7.3104,D3:2D row mean
+Aggregation,mean_axis_1,Row averages,500,0.0007473473,0.0000533473,14.0091,D3:2D row mean
+Aggregation,mean_axis_1,Row averages,1000,0.0028288340,0.0001893330,14.9410,D3:2D row mean
+Aggregation,max_axis_1,Peak value per row,100,0.0001008521,0.0000033250,30.3315,D4:2D row max
+Aggregation,max_axis_1,Peak value per row,500,0.0023807640,0.0000304723,78.1287,D4:2D row max
+Aggregation,max_axis_1,Peak value per row,1000,0.0095849170,0.0001131250,84.7286,D4:2D row max
+Aggregation,std_1d,Volatility feature,100,0.0000069685,0.0000060116,1.1592,D5:Population std
+Aggregation,std_1d,Volatility feature,10000,0.0006747858,0.0000137592,49.0427,D5:Population std
+Aggregation,std_1d,Volatility feature,1000000,0.0679711670,0.0007193750,94.4864,D5:Population std
+Aggregation,quantile_90,Percentile KPI,100,0.0000027371,0.0000111358,0.2458,D6:Nearest 90th percentile
+Aggregation,quantile_90,Percentile KPI,10000,0.0008753958,0.0000895992,9.7701,D6:Nearest 90th percentile
+Aggregation,quantile_90,Percentile KPI,1000000,0.1550059580,0.0091123750,17.0105,D6:Nearest 90th percentile
+Linear Algebra,dot_1d,Similarity score,100,0.0000039485,0.0000004341,9.0962,"E1:dot(a,b)"
+Linear Algebra,dot_1d,Similarity score,10000,0.0003664467,0.0000024700,148.3590,"E1:dot(a,b)"
+Linear Algebra,dot_1d,Similarity score,1000000,0.0366155000,0.0002604580,140.5812,"E1:dot(a,b)"
+Linear Algebra,matvec,Weighted scoring,100,0.0003965271,0.0000013542,292.8129,E2:matrix @ vector
+Linear Algebra,matvec,Weighted scoring,500,0.0092600973,0.0000194030,477.2508,E2:matrix @ vector
+Linear Algebra,matvec,Weighted scoring,1000,0.0368155830,0.0000871250,422.5605,E2:matrix @ vector
+Linear Algebra,broadcast_add,Bias addition per row,100,0.0003956292,0.0000055917,70.7536,E3:matrix + vector
+Linear Algebra,broadcast_add,Bias addition per row,500,0.0096924723,0.0000807780,119.9890,E3:matrix + vector
+Linear Algebra,broadcast_add,Bias addition per row,1000,0.0391081660,0.0003412090,114.6165,E3:matrix + vector
+Preprocessing,zscore,Standardization,100,0.0000107794,0.0000094115,1.1453,F1:(x-mean)/std
+Preprocessing,zscore,Standardization,10000,0.0010550192,0.0000231225,45.6274,F1:(x-mean)/std
+Preprocessing,zscore,Standardization,1000000,0.1094661670,0.0013131670,83.3604,F1:(x-mean)/std
+Preprocessing,minmax_scale,Range normalization,100,0.0000055268,0.0000037677,1.4669,F2:(x-min)/(max-min)
+Preprocessing,minmax_scale,Range normalization,10000,0.0005399558,0.0000101875,53.0018,F2:(x-min)/(max-min)
+Preprocessing,minmax_scale,Range normalization,1000000,0.0596346250,0.0006125420,97.3560,F2:(x-min)/(max-min)
+Preprocessing,rolling_mean_w5,Smoothing,100,0.0000159411,0.0000009157,17.4093,F3:Window=5 moving average
+Preprocessing,rolling_mean_w5,Smoothing,10000,0.0019001333,0.0000084067,226.0271,F3:Window=5 moving average
+Preprocessing,rolling_mean_w5,Smoothing,1000000,0.1984455000,0.0007159590,277.1744,F3:Window=5 moving average
+Preprocessing,zscore_clip,Robust scaling,100,0.0000162417,0.0000111740,1.4535,"F4:zscore then clip [-2,2]"
+Preprocessing,zscore_clip,Robust scaling,10000,0.0014361383,0.0000331000,43.3879,"F4:zscore then clip [-2,2]"
+Preprocessing,zscore_clip,Robust scaling,1000000,0.1450218340,0.0020986670,69.1019,"F4:zscore then clip [-2,2]"
+Memory/Indexing,slice_contiguous,Batch slicing,100,0.0000001300,0.0000001105,1.1765,G1:copy(view) behavior
+Memory/Indexing,slice_contiguous,Batch slicing,10000,0.0000081817,0.0000001142,71.6681,G1:copy(view) behavior
+Memory/Indexing,slice_contiguous,Batch slicing,1000000,0.0008445840,0.0000001670,5057.4564,G1:copy(view) behavior
+Memory/Indexing,slice_strided,Down-sampling,100,0.0000001146,0.0000000918,1.2477,G2:step=2 stride
+Memory/Indexing,slice_strided,Down-sampling,10000,0.0000102358,0.0000000958,106.8233,G2:step=2 stride
+Memory/Indexing,slice_strided,Down-sampling,1000000,0.0015780000,0.0000001660,9505.5517,G2:step=2 stride
+Memory/Indexing,in_place_add,Mutable update,100,0.0000042589,0.0000005451,7.8133,G3:No new allocation
+Memory/Indexing,in_place_add,Mutable update,10000,0.0005348175,0.0000016325,327.6064,G3:No new allocation
+Memory/Indexing,in_place_add,Mutable update,1000000,0.0466522500,0.0001610840,289.6144,G3:No new allocation
+Memory/Indexing,copy_add,Immutable-style update,100,0.0000026147,0.0000004303,6.0771,G4:New allocation
+Memory/Indexing,copy_add,Immutable-style update,10000,0.0002729125,0.0000027883,97.8763,G4:New allocation
+Memory/Indexing,copy_add,Immutable-style update,1000000,0.0371393330,0.0002060840,180.2145,G4:New allocation
+Memory/Indexing,concat,Data union,100,0.0000002026,0.0000005203,0.3894,G5:Concatenate two chunks
+Memory/Indexing,concat,Data union,10000,0.0000183025,0.0000024625,7.4325,G5:Concatenate two chunks
+Memory/Indexing,concat,Data union,1000000,0.0019101660,0.0002034580,9.3885,G5:Concatenate two chunks
+Sorting/Ranking,sort_asc,Ordering,100,0.0000025358,0.0000017498,1.4492,H1:Ascending sort
+Sorting/Ranking,sort_asc,Ordering,10000,0.0008928083,0.0002637250,3.3854,H1:Ascending sort
+Sorting/Ranking,sort_asc,Ordering,200000,0.0292715420,0.0067404580,4.3427,H1:Ascending sort
+Sorting/Ranking,top10_desc,Top-k reporting,100,0.0000026863,0.0000019581,1.3718,H2:Top 10 values
+Sorting/Ranking,top10_desc,Top-k reporting,10000,0.0009657291,0.0002531125,3.8154,H2:Top 10 values
+Sorting/Ranking,top10_desc,Top-k reporting,200000,0.0269573330,0.0066859160,4.0320,H2:Top 10 values
+Matrix Multiplication,matmul,Model inference core,100,0.0492890000,0.0000111250,4430.4729,I1:NxN @ NxN
